@@ -1,0 +1,39 @@
+<app-search></app-search>
+<app-tags></app-tags>
+<ul>
+  <li *ngFor="let coin of coins">
+    <a routerLink="/coin/{{coin.id}}">
+      <img [src]="coin.imageUrl" [alt]="coin.name"/>
+      <div class="content">
+      <div class="name">
+        {{coin.name}}
+      </div>
+      <span class="favorite {{coin.favorite?'':'not'}}">
+        ❤
+      </span>
+      <div class="stars">
+        <star-rating
+        [value]="coin.stars"
+        [totalstars]="5"
+        checkedcolor="red"
+        uncheckedcolor="black"
+        size="22px"
+        [readonly]="true">
+        </star-rating>
+        <div class="product-item-footer">
+          <div class="origins">
+            <span *ngFor="let origin of coin.origins">
+              {{origin}}
+            </span>
+          </div>
+          <div class="price">
+            <span>
+              {{coin.price | currency:'HUF'}}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    </a>
+  </li>
+</ul>
