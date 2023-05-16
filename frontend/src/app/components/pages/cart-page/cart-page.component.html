@@ -1,1 +1,45 @@
-<p>cart-page works!</p>
+<app-title title="Cart Page" margin="1.5rem 0 0 2.5rem"></app-title>
+
+<div class="container">
+  <ul>
+    <li *ngFor="let cartItem of cart.items">
+      <div>
+        <img [src]="cartItem.coin.imageUrl" [alt]="cartItem.coin.name">
+      </div>
+      <div>
+        <a routerLink="/coin/{{cartItem.coin.id}}">
+          {{cartItem.coin.name}}
+        </a>
+      </div>
+      <div>
+        <select #quantitiySelect
+        [value]="cartItem.quantity"
+        (change)="changeQuantity(cartItem, quantitiySelect.value)">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+      </div>
+      <div>
+        {{cartItem.price | currency:'HUF'}}
+      </div>
+
+      <div>
+        <button class="remove-button" (click)="removeFromCart(cartItem)">
+          Remove
+        </button>
+      </div>
+    </li>
+  </ul>
+  <div class="checkout">
+    <div>
+      <div class="coins-count">{{cart.totalCount}}</div>
+      <div class="total-price">{{cart.totalPrice | currency:'HUF'}}</div>
+    </div>
+
+    <a routerLink="/checkout">Proceed to Checkout</a>
+
+  </div>
+</div>
