@@ -1,4 +1,11 @@
-<div class="container">
+<app-not-found
+  [visible]="!coin.id"
+  notFoundMessage="Coin not found"
+  resetLinkText="Back To Homepage"
+  >
+</app-not-found>
+
+<div *ngIf="coin.id" class="container">
   <img [src]="coin.imageUrl" [alt]="coin.name"/>
 
   <div class="details">

@@ -16,7 +16,9 @@ export class CoinPageComponent implements OnInit{
   constructor(activatedRoute:ActivatedRoute, coinService:CoinService, private cartService:CartService, private router: Router) {
     activatedRoute.params.subscribe((params) => {
       if(params.id)
-      this.coin = coinService.getCoinById(params.id);
+      coinService.getCoinById(params.id).subscribe(serverCoin => {
+        this.coin = serverCoin;
+      });
     })
   }
 

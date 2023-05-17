@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/partials/header/header.component';
@@ -11,6 +11,7 @@ import { TagsComponent } from './components/partials/tags/tags.component';
 import { CoinPageComponent } from './components/pages/coin-page/coin-page.component';
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 import { TitleComponent } from './components/partials/title/title.component';
+import { NotFoundComponent } from './components/partials/not-found/not-found.component';
 
 
 @NgModule({
@@ -22,12 +23,14 @@ import { TitleComponent } from './components/partials/title/title.component';
     TagsComponent,
     CoinPageComponent,
     CartPageComponent,
-    TitleComponent
+    TitleComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RatingModule
+    RatingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
