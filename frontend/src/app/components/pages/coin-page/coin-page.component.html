@@ -16,15 +16,7 @@
       <span class="favorite {{coin.favorite? '': 'not'}}">❤</span>
     </div>
     <div class="rating">
-      <star-rating
-      [value]="coin.stars"
-      [totalstars]="5"
-      checkedcolor="red"
-      uncheckedcolor="black"
-      size="25px"
-      [readonly]="true"
-      >
-      </star-rating>
+      <star-rating [stars]="coin.stars" [size]="1.8" />
     </div>
 
     <div class="origins">

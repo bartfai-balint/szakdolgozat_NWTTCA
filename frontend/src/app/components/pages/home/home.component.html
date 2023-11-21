@@ -17,14 +17,8 @@
         ❤
       </span>
       <div class="stars">
-        <star-rating
-        [value]="coin.stars"
-        [totalstars]="5"
-        checkedcolor="red"
-        uncheckedcolor="black"
-        size="22px"
-        [readonly]="true">
-        </star-rating>
+        <star-rating [stars]="coin.stars"/>
+      </div>
         <div class="product-item-footer">
           <div class="origins">
             <span *ngFor="let origin of coin.origins">
@@ -37,7 +31,7 @@
             </span>
           </div>
         </div>
-      </div>
+
     </div>
     </a>
   </li>
