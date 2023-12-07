@@ -1,0 +1,45 @@
+\chapter{Tesztelés}
+
+A tesztelés a weboldal készítés egyik fontos lépése. Ezért a tesztelést én is próbáltam legjobb tudásom szerint véghezvinni. Mivel egy webáruház egy igen komplex projekt ezért számtalan részre oda kellett figyelnem a tesztelés során, amik miatt a program hibába ütközhet. Egy weboldalt különböző típusú operációs eszközzel és böngészővel ellátott eszközről fogják használni. Ez okból fontos, hogy minden platformon hibátlanul működjön, legyen az mobilról vagy asztali gépről használva. Mivel a webáruházam csak a saját gépemen elérhető nincsen publikálva az internetre így a kompatibilitási tesztelést csak szűk körűen tudtam végre hajtani. Ehhez két számítógépet és több böngészőt alkalmaztam. Itt rögtön problémába is ütköztem ugyan is a saját google chromomra letöltött egyik bővítmény akadályozta a program megfelelő futását. Megfelelő tesztelés nélkül egy ilyen probléma nem derült volna ki és ez a későbbiekben a felhasználóknak problémát okozhatott volna. Következő tesztelési forma, amit véghezvittem az úgynevezett funkcionális tesztelés. Ennek lényege, hogy ellenőrizzük, hogy a weboldal/webes alkalmazás minden részegysége a megfelelő képen működik-e. Persze tesztelni ezeket az egységeket csak akkor lehet, ha azok már készen vannak. Itt ezt a tesztelést több területre lehet bontani.\cite{23}
+
+Hivatkozások ellenőrzése
+\begin{itemize}
+    \item Külső linkek
+    \item Belső linkek
+    \item Email linkek
+    \item Törött linkek
+    \item Árva oldalak
+\end{itemize}
+
+Űrlapok tesztelése:
+Mivel a felhasználóknak az űrlapon keresztül kell belépniük az oldalra és az oldal funkciói csak ez után lesznek képesek használni így nagyon fontos ezek ellenőrzése.
+
+Általánosságban ezekre kell figyelni:
+\begin{itemize}
+    \item Hiba jelzések
+    \item Hiba üzenetek
+    \item Mező validáció
+    \item Kötelezően kitöltendő mezők
+    \item Mező maszkolás
+    \item Jelszó mezők működése
+    \item Captcha működése
+\end{itemize}
+
+Az űrlap kitöltésénél kifejezeten oda figyeltem mind a bejelentkezésnél, mind a regisztrációnál hogy minden mező validálva legyen. Legyen szó az email megfelelő formátumáról vagy regisztrációnál az ismételt jelszó magadásánál mindenhova került hiba esetén hiba üzenet is, amivel segítséget nyújthatunk a felhasználóknak. Figyeltem arra is, hogy amennyiben a bejelentkezés során az adatokat hibásan adná meg a belépő az oldal akkor is szóljon neki a hibáról.
+
+Következő tesztelési forma az úgynevezett Usability tesztelés itt ellenőriztem azt, hogy a webáruházat használó felhasználóknak mennyire kényelmes és értelmezhető az oldal használata. A legfontosabb részek, amelyeket tesztelnem kellett a navigáció és a tartalom. Először is a navigáció itt arra kellett oda figyelnem, hogy a navigáció az oldalak között megfelelően működik-e és hogy az adott menüpontok érthetőek a felhasználók számára. Ebben az esetben a menüpontok nevére próbáltam a legérhetőbben megadni. A navigációkat pedig mindegyiket egyesével leteszteltem. Ezek után a tartalmat teszteltem le. Átkellett néznem, hogy tartalmilag logikusan építettem fel a webáruházat, hogy nincsenek-e helyesírási hibák, a kártyáknál és a termékek oldalán a képek minősége megfelelő nem homályos és nem pixeles. Továbbá ilyenkor néztem meg a keresés és a címkék egyértelműek és könnyedén lehet-e őket használni.
+
+Következőleg a felhasználói felületet teszteltem angolul UI (user interface) teszt. Mivel ezen keresztül lép kapcsolatba a felhasználó az oldalunkkal így itt is különös figyelmet kellett fordítanom a tesztelésre.
+
+Ilyenkor az alábbi pontokat vizsgáljuk:
+\begin{itemize}
+    \item A felhasználói felületekre vonatkozó sztenderdeknek történő megfelelés ellenőrzése
+    \item A design elemek ellenőrzése: elrendezés, színek, betűtípusok, feliratok, szöveg blokkok, szöveg formázás, nyomógombok, CTA-k, ikonok, linkek
+    \item A felület tesztelése különböző felbontásokon
+    \item Nyelvi változatok tesztelése
+    \item Különböző eszközökön (mobil, tablet, desktop) történő tesztelés
+\end{itemize}
+
+Külön oda kellett figyelnem, hogy például az oldalon egyik kép se legyen nagyobb a másiknál, a hosszabb nevek ne lógjanak túl, hanem törjenek meg a kártyáknál. Nem lenne esztétikus, ha kilógna a szöveg vagy különféle méretűek lennének a képek. 
+
+A program készítése közben továbbá figyelmet kellett fordítanom a regisztrálás esetén az adatok helyes tárolására főként a jelszó tárolására. Mivel regisztrációnál és bejelentkezés során is az adatok titkosítva vannak ügyelnem kellett, hogy azonos formátumban legyenek lementve, hogy a későbbiekben, amikor szükség van, az összehasonlításukra az ne okozzon problémát.

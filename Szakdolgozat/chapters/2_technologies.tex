@@ -1,0 +1,245 @@
+\chapter{Technológiák}
+\overfullrule=0pt
+\section{HTML}
+
+Egy weboldal létrehozásához elengedhetetlen, hogy a fejlesztőnek legyenek ismeretei az HTML-ről \cite{1} másnéven HyperText Markup Languageről, magyarul Hiperszöveges Jelölőnyelvről. Ez tulajdonképpen egy leíró nyelv, melyet weboldalak létrehozásához hoztak létre, annak érdekében, hogy ne legyen szükség pluginek telepítésére.
+
+Egy HTML három fő részből áll össze. Az első a Dokumentum Típus Definíciója röviden DTD, ez a dokumentum legelején található. Ez határozza meg, hogy az adott dokumentum HTML lesz. Nincsen záró tagja. Például: <!DOCKTYPE html>. 
+
+További példa még a <HTML></HTML>. Ezen nyitó, valamint zár tag közé fog kerülni az egész oldalunk. Ez közvetlen a <!DOCKTYPE html> elem után következik.
+
+A második a fejléc, mely tartalmazza a technikai és a dokumentációs adatokat. Ezeket a felhasználók nem látják, tehát a böngésző nem jeleníti meg. Ilyen például a <title></title> amely meghatározza a HTML oldal nevét. Ezt a böngésző innen, a fejlécből olvas ki. Jelölése: <head></head>
+
+A harmadik fő rész közvetlenül a fejléc után következik, ez a HTML törzse, mely azokat az információkat tartalmazza, amelyet a böngésző meg fog jeleníteni a felhasználók számára. Jelölése:<body></body>
+
+
+\section{JavaScript}
+
+Egy weboldal létrehozásának elengedhetetlen eleme a Javascript \cite{2}. Az évek során ez lett a világon egyik leggyakrabban használt programozási nyelv. Főként platformfüggetlen alkalmazások létrehozására használják, tehát az adott alkalmazást bármelyik böngészőből képesek futtatni. Ez egy kliens oldali programozási nyelv, tehát csak azokat a dolgokat tudjuk vele elintézni, amelyek a kliens, a felhasználó oldalán történnek. Ennek segítségével képes a JavaScript felismerni a HTML oldalakba beágyazott utasításokat, ezáltal képes a felhasználói eseményekre reagálni, például egérklikkelés vagy form beküldés.
+
+ Emellett ez egy objektum orientált, prototípus alapú szkriptnyelv, ami kifejezetten weboldalakhoz lett kifejlesztve. Futtatásához a fejlesztőnek nincs szüksége külön fordítóra, magában a böngészőben tudja futtatni. Ez annak köszönhető, hogy a webböngészőkben van beépített JavaScript-motor. Ezen alkalmazásokat viszont nem csak böngészőből tudjuk futtatni, hanem azon kívül is, például a node.js-sel, ami több operációs rendszerrel is kompatibilis.
+ 
+A JavaScript egy laza típusú nyelv. Tehát deklarálásnál nem kell megadni az adott változó adattípusát, mivel a JavaScript az átkonvertálást automatikusan elvégzi nekünk. Ezért például előfordulhat, hogy az adott változó egyszer egy integer, utána pedig egy string lesz.
+
+
+\section{CSS}
+
+Egy weboldal létrehozásánál a kinézetére is oda kell figyelni, ebben nyújt segítséget a CSS \cite{3}, angolul Cascading Style Sheet. Ez egy stílus leíró nyelv, amely a HTML típusú dokumentumok kialakítását adja meg. Ezzel nem csak HTML típusú, de még az XML típusú dokumentumok kinézetén is tudunk változtatni. A CSS-sel meg lehet adni a lapok színét/hátterét, betűtípusát, elrendezését és még sok más, megjelenéshez vonatkozó elemet meg lehet változtatni. Ennek segítségével el lehet különíteni a HTML struktúráját a HTML kinézetétől. Ez több szempontból is hasznos: CSS használatával növekszik a weblapunk használhatósága, jobban áttekinthető lesz; sokkal rugalmasabb lesz a megjelenítése, kisebb képernyő használatakor sem fog szétesni az oldal. A felsoroltak ugyanúgy érvényesek XML dokumentumnál is, mivel ennek szintén részletesen állítható a stílusa, tehát be tudjuk ezen is állítani a színét, elhelyezkedését és betűtípusát is a webböngészőben.
+
+Az adott elemek stílusát a szektorok kiválasztásával tudjuk megadni.
+
+Minden elemre a * szimbólumot használjuk. Ez az egész HTML-re vonatkozik. 
+
+Tudunk szűrni az elem neve alapján - például lehet ’p’ vagy ’div’ -, ekkor a megadott típusú elemből a változtatások az összes elemre vonatkozni fognak. 
+
+Emellett tudunk szűrni leszármazottak alapján is, például, ha egy ’div’-ben van egy lista, aminek a jelölése ’li’ ekkor a ’li’ a ’div’ elem része lesz, így a ’div li’ szelektorral tudunk rá hivatkozni. Tehát a ’div’-en belül tartózkodó ’li’-re fog csak vonatkozni.
+
+Képesek vagyunk még hivatkozni elemekre class vagy id alapján is. Class esetén a .class, Id esetén pedig \#id-val tudjuk használni a szelektort.
+
+A CSS-ben rendelkezésre állnak pszeudo osztályok is, amelyekkel műveletekhez lehet stílusokat hozzárendelni. Például megváltozik az elem színe, ha felé visszük az egeret.
+
+Az CSS-t többféleképpen lehet a HTML-hez hozzá csatolni. Két típusa létezik a külső és a belső CSS.
+
+Össze lehet kapcsolni a HTML fájlt egy külső CSS dokumentummal. Ez a leggyakrabban használt, mivel ilyenkor a CSS fájl teljes mértékben külön áll a HTML fájltól. Így a kódunk sokkal átláthatóbb lesz. Ezáltal ezt a külső fájlt több oldalhoz is tudjuk használni így, ha a weboldalunk több HTML-ből áll, akkor azokat egységesíteni tudjuk, így még esztétikusabb lesz.\\
+
+\textbf{Ennek szintaktikája a következő:}
+\begin{itemize}
+    \item[]<link ref=stylesheet type=”text/css” href=”CSS.ELÉRÉSI\_ÚTVONAL”> 
+\end{itemize}
+
+
+Ezt a kódsort a fejlécbe kell elhelyezni.
+
+Másik módszer, amivel külön álló fájlként használjuk a CSS-t amikor stíluslapként importáljuk be. Ezt ugyan úgy a fejlécben kell megadni.\\
+
+\textbf{Ennek a szintaktikája:}
+\begin{itemize}
+    \item[]@import url(ELÉRÉSI\_ÚTVONAL) 
+\end{itemize}
+
+
+A belső CSS-t már kevésbé használják a fejlesztők, de azért néha erre is szükség van. Az egyik ilyen módszer, amikor közvetlen az elem kezdő címkéjében helyezzük el a stílust. Ennek előnye, hogy gyorsan létrehozható, nem kell hozzá a fejlécben külön részt vagy külön CSS fájlt létrehozni. Hátránya viszont, hogy ez csak egyetlen elemre vonatkozik, így ezt nem lehet több elem módosítására használni.
+
+A következő belső CSS-t már lehet alkalmazni több elemre is. Ez sokkal jobban hasonlít arra, mint amikor egy külső fájlból dolgozunk, csak itt a fejlécben ’style’ tagok közé helyezzük el a CSS-t. Előnye, hogy nem kell új fájlt létrehoznunk, viszont ekkor sokkal hosszabb és kevésbé átlátható lesz a kódunk, ami nehezíti a későbbi fejlesztést. Emellett figyelembe kell vennünk, több HTML esetén minden oldalhoz külön meg kell írni a CSS-t és nem lehet egységesíteni úgy, mint amikor külön fájlban van.
+
+\cite{4} Mivel a CSS megfelelő beállítása sok időt elvessz a fejlesztőktől ezért CSS keretrendszereket hoztak létre, amiket már a natív CSS helyett szívesebben alkalmaznak. Ennek köszönhetően jóval hatékonyabbak lesznek és jóval nagyobb termelékenységet tesz lehetővé a CSS keretrendszer. Elsősorban reszponzív weblapok készítéséhez lett tervezve, amely asztali számítógépen, laptopon és okostelefonon lehetővé tesz jól megjelenő weboldalak létrehozását. Napjainkra már több ilyen keretrendszer is létrejött a fejlesztők és tervezők örömére. Ezeknek különböző képességekkel és rugalmassággal rendelkeznek. Népszerűségüket annak köszönhetik, hogy egyszerűek és könnyen tanulhatóak. Szinte már nem lehet olyan weboldalt találni, aminél ne használnák ennek több oka is van. Ezek az okok a következőek: Időt spórol meg mivel a feladatokat automatizálja, stabil munkafelületet biztosít, segítségével a mobil barát felülettel rendelkezik és támogatja a böngészők közti problémák megoldását.
+
+\section{Angular}
+\subsection{Bevezetés az Angularba}
+Az Angular \cite{5} egy TypeScript és komponens alapú keretrendszer, amelyet első sorban egy oldalas (single page) webes alkalmazások fejlesztésére hoztak létre a Google TypeScript nyelven. Szakdolgozatom elkészítéséhez azért ezt választottam, mert ezt a keretrendszert világszerte rengeteg fejlesztő használja, ez az egyik legelterjedtebb keretrendszer, így nagy tudásbázis áll rendelkezésemre, minden felmerülő problémámra könnyen és gyorsan tudok megoldást találni.
+
+Az Angular a webes alkalmazások készítéséhez HTML-t és TypeScript-et használ. A lényeges és az opcionális funkciókat könyvtárakkal valósítja meg, ezeket a fejlesztő importálja az alkalmazásba. Az Angular alapvető elemei a komponensek, ezek NgModul-okba szerveződnek. Ez az NgModule kódokat funkcionális halmazokba gyűjti össze, ezek fogják a későbbiekben meghatározni az alkalmazásunkat. Egy Angular alkalmazásnak mindig van egy gyökérmodulja, amely lehetővé teszi a bootstrapping-et. A komponensek ” view”-okat, magyarul nézeteket definiálnak. Ezek olyan képernyőelemek halmazai, amelyeket az Angular a program logikájának és adatainak ismerete alapján képes módosítani. A komponensek szolgáltatásokat használnak, viszont ezek a szolgáltatások közvetlen nem kapcsolódnak a nézetekhez. Azonban beilleszthetőek a komponensekbe és ennek segítségével a programunk moduláris, újra használható és sokkal hatékonyabb lesz. A modulok, komponensek és a szolgáltatások dekorátorokat alkalmaznak. Ezek jelzik az Angular-nak, hogy miként használhatják őket.
+
+A komponens osztály metaadatai tulajdonképpen egy sablont alkotnak, amely HTML részekhez kapcsolódik, ez lehetővé teszi az Angular számára, hogy a megjelenésük előtt módosítsa a HTML elemeket.
+
+A szolgáltató osztályok lehetővé teszik a z Angular-nak a függőség beillesztését a komponensek részére.
+\subsection{Modulok}
+Több NgModule áll rendelkezésre az Angular számára, amelyek kiegészítik a JavaScript modulokat. Ez a modul annak érdekében, hogy a modulok egységet alkossanak, komponensekhez társíthat kódot, például a szolgáltatásokat. Mint fentebb is említettem, egy Angular alkalmazásnak kizárólag egyetlen egy gyökérmodulja van, ez pedig egy NgModule osztály. Ezt az osztályt egységesen AppModule-nak nevezik, ez pedig az app.modul.ts fájlban helyezkedik el. Az alkalmazást ezzel a gyökér NgModule bootstrappingjével indítjuk el. Egy kisebb alkalmazásnak általában csak egy NgModule-ja van, az alkalmazások nagy részének viszont jóval több funckiómodulja van. A gyökér NgModule-t azért hívják így, mert a hierarchiában tetszőleges mélységig tartalmazhat gyermekmodulokat. Az NgModul-ok képesek funkciókat importálni más modulokból és saját funkcióikat exportálni más NgModul-ok számára, akárcsak a JavaScript modulok. A kód különálló modulokra való bontása megkönnyíti a fejlesztést, az átláthatóságot, valamint az újrahasználhatóságot. Ezáltal, ha valamit ki akarunk cserélni az alkalmazásunkban, nem kell az egész kódon módosítani, elég az adott modult megváltoztatni vagy kicserélni. Emellett még egy nagy előnye van, a ’lazy loading’, ami azt jelenti, hogy a modulokat külön is be lehet tölteni. Ezzel lecsökkenti a betölteni kívánt kódok mennyiségét, amivel a fejlesztők rengeteg időt meg tudnak spórolni a fejlesztés során.
+\subsection{Komponensek}
+A komponens a képernyő nézetét vezérli. Ez a következőkből áll: egy TypeScript osztályból, amely az alkalmazás logikáját és adatait definiálja; egy CSS stílusból; és egy HTML-ből, ami összekapcsolja az elemeket. Egy Angular alkalmazásnak mindig van minimum egy darab komponense, ez a gyökérkomponens. Ez a komponens köti össze a komponenshiearchiát a dokumentum objektum modell-el (DOM).
+
+A komponens az az osztály, amely közvetlen egy @Component() dekorátor alatt helyezkedik el, ez meghatározza az adott osztály metaadatait. A metaadatok megmondják az Angular-nak, honnan kell megszereznie a nézet megjelenítéséhez és elkészítéséhez létfontosságú elemeket.
+
+\subsection{Sablonok, direktívák és adatköztés}
+A sablon hasonlít egy szokásos HTML fájlhoz, viszont ez tartalmaz Angular sablon szintaxist is, amely módosítja a HTML-t még a megjelenés előtt. A sablon képes használni adatkötést, ami pedig összeköti a DOM-ot, az alkalmazás adatait és direktívákat, ezek összessége biztosítja a programlogikát. 
+
+Az adatkötésnek két fajtája van: az eseménykötés és a tulajdonságkötés. 
+
+Eseménykötés: lehetővé teszi, hogy a felhasználói bemenetre reagáljon az alkalmazás az adatainak frissítésével.
+
+Tulajdonságkötés: lehetővé teszi, hogy a HTML-be kiszámított értéket helyezhessünk be az alkalmazás adataiból.
+
+Keretrendszer nélkül a fejlesztőnek kéne az adatelemeket feltöltenie a HTML-re a felhasználói válaszok és érték frissítések megváltoztatásáért. Viszont ezek megírása nagyon hosszadalmas munka, amiben rengeteg hibát lehet véteni. Emellett az Angular támogatja a két irányú adatkötést, tehát változások nem csak a DOM-ban történnek meg, hanem a programadatban is. Ez azért lehetséges, mert a sablon részei összehangolhatóak a komponens részeivel, utána csak meg kell mondani az Angular-nak, hogyan kapcsolja össze a két részt.
+
+Az adatkapcsolat nem csak a sablon és komponens közti kommunikációban vállal nagy szerepet, hanem a szülő-gyermek komponensek közti kommunikációban is.
+
+A sablonok képesek ” pipe”-okat használni. Ezek a @Pipe dekorátorral ellátott osztályok egy függvényt definiálnak, amely a beérkező értékeket kimeneti értékké alakítja át a megjelenítéshez, ezzel nagymértékben növelve a felhasználói élményt.
+
+\subsection{Szolgáltatások és függősége beillesztése}
+A szolgáltatások (service) magukba foglalnak minden értéket, funkciót és tulajdonságot, amire az alkalmazásnak szüksége van. A szolgáltatás osztályokat az @Injectable() dekorátor előzi meg, ennek segítségével lehetséges más függőségeket beilleszteni az osztályainkba. Ezek az osztályok olyan adatok és logikák számára vannak fenntartva, melyeket megosztunk a komponensek között úgy, hogy közben a nézetekhez nem kapcsolódnak.
+
+A függőségi beillesztésnek köszönhetően a komponens osztályok megmaradnak hatékonynak és tömörnek, ezek csak továbbítják a feladatokat a szolgáltatásoknak. Ez a függőségi beillesztés (DI) az Angular azon része, mely hozzáférést biztosít a szolgáltatásokhoz és erőforrásokhoz a komponensek részére.
+
+A komponensek szolgáltatásokat használnak azokra a feladatokra, melyek nem érintik az alkalmazás logikáját vagy a nézetet. Egy ilyen szolgáltatást több komponens is használhat a feladata elvégzésére.
+
+\subsection{Átirányítás (Routing)}
+Az Angularban a Router NgModul egy szolgáltatást biztosít, amely lehetővé teszi navigációs útvonal létrehozását az alkalmazás különböző állapotai és a nézet hierarchia között.
+\subsection{Navigációs konvenciók}
+Amikor a felhasználó a címsorba beír egy URL-t akkor az az adott oldalra navigálja.
+
+Az oldalakon található linkre kattintva a böngésző a megadott oldalra navigálja a felhasználót.
+
+A böngészőben található „vissza”, illetve „tovább” gombra kattintva a böngésző az előzmények alapján a megfelelő oldalra navigál. Ez azért lehetséges, mert a böngésző naplózza az előzményeket.
+
+Az átirányítás az URL-szerű útvonalakat nem oldalakként tárolja el, hanem nézetekhez rendeli.
+
+
+\section{TypeScipt}
+A TypeScript-et \cite{6} a Microsoft hozta létre, mint a JavaScript szuperkészlete, ezért a már meglévő JavaScript alkalmazások is használhatóak TypeScript alkalmazásként. A szuperkészlet azt jelenti, hogy használni tudja a JavaScript már meglévő funkcióit, struktúrákat és hozzá tud adni bizonyos funkciókat, amelyek korábban nem voltak a JavaScript részei. Viszont a böngészők csak a JavaScript-et értik, ezért a TypeScript-be írt alkalmazásokat először le kell fordítania a fejlesztőnek, és ezzel JavaScript-be kell konvertálni.
+
+A TypeScript-ben már deklarálni kell adattípust. Így már a programunk képes kiértékelni, hogy az adatstruktúrához rendelt értékek megegyeznek-e a deklarált adattípussal. Az esetben, ha nem egyezik meg, akkor a programunk hibára fut. Ez azért is nagyon jó, mert így a programon dolgozó fejlesztők hamarabb észreveszik a hibákat.
+
+A TypeScript elsősorban a JavaScript korlátait igyekszik kiküszöbölni, miközben megőrzi annak előnyeit, azaz platformfüggetlen és bármely böngészőben futtatható marad. Ezen kívül rendelkezik statikus típusellenőrzéssel, ami azt jelenti, hogy a JavaScript-tel ellentétben - ami a hibát csak akkor kapja el, amikor a kód lefut a böngészőben - már a fejlesztés elején észleli a kódban a hibát.
+
+\subsection{TypeScript fordítója}
+Az általunk deklarált típusokat a fordító ellenőrzi nekünk. A fordító egy program, amely a kódunkat gépi kóddá alakítja annak érdekében, hogy a számítógép be tudja azt olvasni és az adott feladatokat végre tudja hajtani. Amikor a TypeScript fájlunkat futtatjuk, akkor a fájlunkat a TypeScript lefordítja és leellenőrzi a típusokat. Ennek a segítségével derül fény a hibákra. Fontos megemlíteni, hogy a TypeScript a kódunkat átfordítja JavaScript kódra.
+
+A JavaScript-ben a változók nem kapcsolódnak közvetlen az értéktípushoz, így az adott változóhoz bármilyen típusú érték rendelhető. Ennek a változónak az értékét és típusát bármikor megváltoztathatjuk. Viszont a dinamikus típusok a fejlesztés folyamán több hibához is vezethetnek. Viszont a JavaScript nem fog hibát mutatni, mivel nem tudja, hogy az adott művelet milyen típusú adatot vár. Ezért csak átveszi az adatot és elvégzi a műveletet.
+
+Bár a kezdetekben csupán néhány funkciót írtak a weboldalakhoz a JavaScript-tel, később már egész alkalmazások építésére használták, ami nagyban megnöveli a hibázás lehetőségét. Erre és még sok másra nyújt megoldást a TypeScript. 
+
+\section{Node.js}
+A Node.js \cite{7}\cite{8}\cite{9} egy ingyenes, nyílt forráskódú és szerveroldali JavaScript futtatókörnyezet, amelyet webszerverek készítéséhez hoztak létre. A Node.js továbbá JavaScript modulok könyvtárát biztosítja, ami nagy segítséget nyújt a fejlesztőknek a webes alkalmazások fejlesztésében. 
+\subsection{Node.js előnyei}
+\textbf{Könnyű skálázhatóság:} A Node.js-t előszeretettel használják a fejlesztők, mivel könnyen skálázható vízszintes és függőleges irányba is. Ez nagymértékben megnöveli az áteresztő képességét. A skálázhatóság közben plusz erőforrásokat is képesek a fejlesztők hozzáadni.\\
+
+\textbf{Valós idejű webes alkalmazások:} A Node.js kiváló választás, ha az ember valós idejű webes alkalmazásokat akar fejleszteni. Ilyen lehet például egy chat- vagy játékalkalmazás. Ez a gyors szinkronizáció miatt lehetséges, a Node.js pedig elkerüli az eseményhurokkal a http túlterhelését.\\
+
+\textbf{Fast Suite:} A Node.js a Google Chrome magját a V8 JavaScript motort használja, ami rendkívüli gyorsaságot tesz lehetővé. Ez a sebesség annak köszönhető, hogy a Node.js-ben lévő esemény hurok foglalkozik az aszinkron műveletekkel.\\
+
+\textbf{Gyorsítótárazás előnyei (caching):} A Node.js a modulnak gyorsítótárat biztosít. Amikor egy kérés érkezik az első modulhoz, az az alkalmazás memóriájában a gyorsítótárba kerül. E miatt nem kell újra végrehajtani a kódot.\\
+
+\textbf{Adatfolyamok (Data Streaming):} A Node.js-ben a HTTP kérések és válaszok külön eseménynek minősülnek, ezeket adatfolyamoknak nevezzük. Amikor betöltéskor feldolgoz egy fájlt, abban az esetben, ha az adatok átvitel formájában bekerülnek az adatfolyamba, a Node.js csökkenti a teljes időt, ezzel gyorsabbá téve a programot.\\
+
+A Node.js egy olyan I/O műveletet végez el, amelyet nem blokkol a fentebb említett aszinkron tulajdonság, ennek köszönhetően lehetőséget kap arra, hogy egyszerre több ezer kapcsolatot tudjon működtetni. Ez úgy működik, hogy nem várja meg, míg az egyik API visszaadja az adatokat, hanem a következő API-ra fog átlépni. Mivel a válaszadás blokkolásmentes, ezért jól skálázhatóvá válik. Mivelhogy egy egyetlen szálon futó programot használ, egyszerre több kérést tud véghez vinni, amivel jóval gyorsabb lesz a többi szerverhez képest. A Node.js-sel készült alkalmazások nem pufferelnek (angolul buffering), hanem részekként adják ki az adataikat.
+
+A Node.js platformfüggetlen, tehát Windowson, macOs-en és Linuxon is elérhető és futtatható. Lehetővé teszi a JavaScript gyors fejlesztését, amivel az egyik leghatékonyabb szerveroldali programozási nyelv lett. A főbb feladata a frontend és a backend közti kommunikáció. Ilyen kommunikációk például az adatok törlése vagy módosítása.
+
+\section{Adatbázisok}
+Az adatbázis azonos tulajdonságokkal rendelkező, strukturált adatok összegzése. Feladata az adatok hosszú távú megtartása és a későbbiekben az adatok egyszerű visszakeresésének segítése. Ezeket egy ezen adatok tárolására, lekérdezésére, feltöltésére és módosításra alkalmas szoftverrel kezelik. Ezek az adatbázis-kezelő rendszerek. Az adatbázis-kezelő rendszereket angolul Database Management Systemnek nevezzük. Feladatuk, hogy biztosítsák az adatbázisokhoz való hozzáférést és a zavartalan működést. Azért van szükség az adatbázisokra, mert megkönnyítik az adatok tárolását, nincs szükség fizikai tárolásra, és segítséget nyújtanak a programoknak a szükséges adatok gyorsabb elérésében. Emellett másik számítógépről is el tudjuk érni az adatainkat, így hardveres hiba esetén is képesek vagyunk hozzájuk férni, valamint több fejlesztő képes használni azokat, aminek köszönhetően a programfejlesztés időtartalma lerövidülhet.
+Az adatbázisrendszereken \cite{10} belül két csoportot különböztetünk meg: Az SQL-t és a NoSQL-t.
+
+\subsection{SQL}
+Az SQL \cite{11}, teljes nevén strukturált lekérdezőnyelv, angolul Structured Query Language. Az SQL nyelvet főként a relációs adatbázis-kezelők programozásához (RDBMS) használják. Több SQL nyelvjárás is létezik, a nyelvek alaputasításai azonban megegyeznek. Az SQL egy procedurális és részben deklaratív leírónyelv. 4 részre lehet bontani: adatdefiníciós, adatkezelési, lekérdező és adatvezérlőre. Az SQL-lel létrehozott rendszerek táblákban tárolják az adatokat, ezekben a táblákban vannak mezők és rekordok. A táblázatokban található egy-egy rekord több másik táblában lévő rekordhoz is kapcsolódhat. Egy rendszerben a felhasználók adatait a rekord tartalmazza, ezen belül a mezők tartalmazzák külön-külön az egyes adatokat is. Minden tábla tartalmaz egy elsődleges kulcsot, ez az a mező lesz, amely az adott rekordot egyértelműen meghatározza. Az SQL adatbázis előnyei, hogy nagy mennyiségű adatot tud tárolni és összetett lekérdezéseket lehet vele végrehajtani. Az SQL egy előre meghatározott sémával dolgozik, ebből fakadóan az adatbázis megkezdése előtt az adatokat meg kell szervezni és át kell strukturálni. Az SQL-t főként olyan rendszerekhez használják, ahol nagy mennyiségű adatot kell tárolni ilyenek például a leltározó, könyvelési és banki rendszerek.
+\subsection{NoSQL}
+Az idő múlásával - ahogy növekedett a feldolgozni kívánt adatok mennyisége és változott a feldolgozási teljesítmény - új adatbázis-kezelő technológiák jelentek meg, amelyek jobban kielégítették az új elvárásokat és hatékonyabban ellátták a szükséges feladatokat. Ezeket hívjuk NoSQL adatbázisnak \cite{12}. Mint a nevéből is adódik, nem SQL alapú, a NoSQL nem egy relációs adatbázis. Tehát az adatokat nem táblákban tárolja, és nem használ SQL parancsokat a lekérdezésekhez csak néhány kivételes esetben támogatja az SQL parancsokat. Ez sokkal nagyobb rugalmasságot tesz lehetővé és jobban tud alkalmazkodni a hozzá illő formátum használatához. Főként gyorsan és sokat változó, strukturálatlan, nagy mennyiségű adat kezelésére alkalmas. Ez lehetővé teszi, hogy a fejlesztők gyorsan tudjanak reagálni az előre nem látható helyzetekre és problémákra, így rendszerint használják közösségi oldalakhoz, ahol szükség van arra, hogy gyorsan létre tudjanak hozni új adatbázis-rendszereket. Ezen kívül még előszeretettel használják mobil alkalmazásokhoz és tartalomkezelésre. 
+A NoSQL-t az adattárolás alapján négy féle típusra bonthatjuk: 
+\begin{itemize}
+    \item[1.]Dokumentumtárolók. Ez a típusú adattárolás dokumentumokban tárolja az információt. Ezt általában XML, JSON, BSON formátumban tárolja. Rendszerezésük történhet gyűjtemények, címkék, metainformációk és hierarchikus elrendezés alapján.
+    \item[2.]A gráf adatbázisokban olyan adatokat képesek tárolni, amelyek jól modellezhetők gráfként és ezek között megszámlálhatatlan számú kapcsolat lehet. 
+    \item[3.]A kulcs-érték adatbázisokban a benne lévő adatokat kulcsokkal érhetjük el és módosíthatjuk. Hátránya, hogy a műveletek nagy részét nem támogatja.
+    \item[4.]Objektum-adatbázis, melyek az adatokat objektumonként tárolják.
+\end{itemize}
+
+
+\subsection{MongoDB}
+A webáruházam adatbázisának a mongoDB-t választottam.
+
+A mongoDB \cite{13} a legnépszerűbb NoSQL adatbázis, amely nyílt forráskódú dokumentumtároló adatbázis. Mival a mongoDB egy NoSQL adatbázis, ennek köszönhetően nem relációs adatbázis struktúrán alapul, hanem dokumentumot használ az adatok tárolására és visszakeresésére. Ez a dokumentum BSON formátumú.
+
+\subsubsection{BSON}
+A BSON \cite{14} a JSON (JavaScript Object Notation) egy változata, pontosítva a BSON egy bináris JSON. Ez annak köszönhető, hogy bináris struktúrára kódolja a típusát és a hosszinformációkat, mely a JSON dokumentumokhoz képes gyorsabb átnézést tesz lehetővé. Emellett tartalmaz plusz adattípusokat, például dátumokat és bináris adatokat, ami nagy segítséget nyújt a MongoDB számára. Viszont ez nem azt jelenti, hogy JSON-t nem lehet benne tárolni. Amit JSON-ben lehet ábrázolni az tárolható és lekérdezhető MongoDB-vel, ebben az illesztőprogram segít, ami átkonvertálja az adatokat.
+
+A RDBMS rendszer kialakításából adódóan nem horizontálisan skálázható, így nagy mennyiségű adat kezelésére nem alkalmas. Ha az adatbázis egyetlen egy szerveren fut, akkor eléri a skálázhatósági határt. A RDBMS rendszerrel szemben a NoSQL adatbázisok jobban skálázhatóak és a teljesítményük is jobb. A MongoDB is egy ilyen adatbázis. A dokumentummodelljével növeli a teljesítményét és az újabb és újabb szerverek hozzáadásával skálázódik. A dokumentumorientáltsága az egyik főbb előnye mivel az adatokat minimális számú dokumentumban tartja, nem úgy, mint a RDBMS, ami több relációs struktúrára bontva tartja az adatait.
+
+\subsection{MongoDB előnyei}
+\textbf{Indexelés:} A MongoDB indexelést alkalmaz a keresésekhez, ezáltal nagy adatmennyiséget képes rövid idő alatt feldolgozni. Indexelés nélkül minden adatot egyesével kéne átnéznie az adatbázisnak.
+
+\textbf{Skálázhatóság:} A MongoDB horizontálisan skálázható az adatok különböző szerverekre való feldarabolásával. Ezeket az adatokat shard kulcs segítségével darabolja fel, ezek egyenlő arányban foglalnak helyet a szervereken. A későbbiekben további gépek is hozzáadhatóak az adatbázishoz.
+
+\textbf{Replikáció és magas rendelkezésre állás:} A MongoDB a különböző szerverekre több másolatot is elhelyez annak érdekében, hogy az adatok többször is rendelkezésre álljanak. Tehát redundanciát biztosít, melynek köszönhetően hardver hiba esetén az adatok nem fognak elveszni. Vagy ha egy szerver leáll, akkor se történik probléma, mivel az adatok a többi szerverre is le vannak mentve.
+
+\textbf{Big Data:} Mivel a MongoDB rendelkezik sharding-gal és képes partícionálásra, így rendkívül hatékonyan használható nagy mennyiségű adat kezelésére.
+
+\textbf{Aggregáció (Összesítés):} Az aggregációs műveletek adatokat dolgoznak fel és ezekkel az adatokkal műveleteket hajtanak végre. Ilyen műveletek a sum, avg, min és max. 
+
+\textbf{Instabil séma:} Míg a RDBMS-ben az új oszlopok hozzáadása meglehetősen bonyolult, addig a MongoDB-ben ez egy könnyű feladat. Mivel a MongoDB séma nélküli, ezért az oszlop hozzáadása esetén az új tag nem befolyásolja a már meglévő dokumentumot. Nincs szükség a központi rendszer katalógus frissítésére vagy az adatbázis offline módba helyezésére a módosításhoz, a MongoDB elvégzi a szükséges módosításokat.
+
+\section{Verziókövető rendszerek}
+A verziókövető rendszerek \cite{15} azért jöttek létre, hogy a több verzióval rendelkező adatokat kezeljék vele. Főként szoftverfejlesztéshez használják a verziókövető rendszereket, amelyeken több fejlesztő is dolgozik egy időben. A fejlesztés során létrejött verziókat verziószámokkal különböztetik meg. Viszont, ha egy időben két fejlesztő egyszerre akarja módosítani valamelyik, már feltöltött fájlt, akkor az a két módosítás felülírja egymást, így hibák jönnek létre. Ezt kétféleképpen oldják meg.
+
+Az egyik ilyen a zárolás (lock). Ez az egyik legegyszerűbb módszer. Olyankor, ha egy fejlesztő már elkezd módosítani egy fájlt, akkor a rendszer már nem engedi, hogy egy másik fejlesztő is elkezdje ugyanazt a fájlt módosítani. Egy másik módszer erre, ha a fejlesztő kiveszi a módosítandó fájlt, a többi fejlesztő így csak megnézni tudja majd, levenni és módosítani nem. Ez főleg nagyobb terjedelmű rendszereknél hasznos, mivel sok fejlesztő esetén az összefűzés már nagyon bonyolult lehet. Viszont a fejlesztést lassíthatja, hiszen ha valaki túl sokáig tartja magánál a fájlt, a többi fejlesztő nem tudja a munka rá eső részét elvégezni.
+
+A másik módszer az összefűzés, angolul merge. Itt a zárolással ellentétben egy fájlon több fejlesztő is dolgozhat. Amelyikük elsőnek tölti fel az ő részét, az előnyt élvez és a feltöltése biztosan sikerrel fog zárulni. A többiek részére viszont összeolvasztási lehetőség áll fenn, azaz a külön-külön elvégzett módosításaikat egységesítik, végül a több különálló módosítás egy verzióvá áll össze. Így nem írják fölül egymás részeit és a fejlesztés gondtalan folytatódni tud.
+
+\subsection{GitHub}
+A szakdolgozatom készítése során a GitHub \cite{16} verziókövető rendszerre esett a választásom. Ahogy haladtam előle programommal úgy töltöttem fel ide folyamatosan. A GitHub egy internetes tárhelyszolgáltató és verziókövető rendszer, ami Git-et használ. A Git biztosítja az elosztott verziókezelést, hozzáférés szabályzást, hibakövetést, és feladatkezelést a projektek számára.
+
+\section{Postman}
+A Postman \cite{17} egy API platform a fejlesztők számára, amikkel a fejlesztők képesek megtervezni, felépíteni, tesztelni és iterálni az API-jaikat.
+A Postman egy API (Application Programming Interface) tesztelő eszköz. Az API alkalmazások között hoz létre kapcsolatot és ezt a kapcsolatot biztosítja. Erre mindig szükség van, amikor hozzáférünk egy alkalmazáshoz. A Postman-t a fejlesztők számára hozták létre, hogy a fejlesztők képesek legyenek megtervezni, dokumentálni, felépíteni, módosítani, tesztelni és iterálni az API-jaikat. A Postman főbb funkciói, hogy HTTP (Hypertext Transfer Protocol) kéréseket és válaszokat képes küldeni és megfigyelni. Ezen felül rendelkezik GUI-val (grafikus felhasználói felület). Több fajta http kérés küldésére alkalmas, ilyenek például a POST, PUT, GET és a PATCH.
+A Postman nagyon népszerű lett a fejlesztők körében, ennek oka az egyszerű használhatóság, az ingyenes hozzáférés és hogy támogatja a tesztek egyszerű karbantartását. 
+A Postman \cite{18} tartalmaz egy eszköz készletett, amely nagyban elősegíti az API létrehozását. Ezek az eszközök a következőek:
+
+\begin{itemize}
+    \item API Kliens: Az API kliens a Postman alapvető eszköze, ez lehetővé teszi az egyszerű hibakeresést és a tesztelést. Továbbá lehetőség van HTTP, REST és SOAP kérésekre.
+    \item API tervezés: Megkönnyíti a munkát a bármekkora fájlokkal. Ezeket a sepifikációkat OpenAPI, RAML GraphQL és SOAP formátumban lehet megtervezni. Továbbá az API életciklusának bármelyik részéhez lehet tervezést készíteni.
+    \item API Dokumentáció: A Postman birtokol egy roppant fontos funkciót ez a dokumentáció. Ezt a dokumentációt automatikusan hozza létre a Postman. Ezek a dokumentumok tartalmazzák a kéréseket és ezek részleteit, mintakódokkal kiegészítve. A dokumentumokat vagy normál dokumentum formátumban generálja vagy van lehetőség OpenAPI-n keresztül is generálni.
+    \item API tesztelés: A Postman-ban lehetőség van tesztek készítéséhez és futtatásához. Az alábbi teszteket lehet létrehozni: integrációs tesztek, regressziós tesztek. A tesztek gyors elkészítését a Node.js alapú futtatókörnyezet segíti elő.
+    \item Mock szerverek: Abban az esetben, ha nem akarunk valódi kéréseket küldeni az API-nak akkor lehetőségünk van mock szerverek létrehozására, amelyek a végpontokat fogják szimulálni. Ennek köszönhetően a fejlesztők látni fogják hogyan működik az API mielőtt azt élesben használnák.
+    \item Monitorok: A Postman felhőjében monitorok vannak elhelyezve, amik segítenek követni az API-k állapotát és teljesítményét. A felhőben való tárolás nagyban elősegíti a monitorok gyors beállítását.
+    \item API érzékelés: A kéréseket és a cookie-kat a böngészőből rögzíti a Postman. Ennek következtében a hibakeresést felgyorsítja. Ebben segít a Postman Interceptor amely a kérések és a válaszok elfogadásával foglalkozik, és a Postman proxy amely HTTP és HTTPS weboldalakkal használható.
+\end{itemize}
+
+\section{Visual Studio Code}
+A Visual Studio Code \cite{19} egy ingyenes, hatékony és könnyen használható fejlesztői környezet, amelyet a Microsoft hozott létre Electron keretrendszerrel. A szakdolgozatom elkészítéséhez én is ezt a VS Code fejlesztői környezetet választottam, mivel rendelkezik több hasznos funkcióval is:
+
+\textbf{Több programozási nyelv támogatása.} Régebben a fejlesztőknek a különböző nyelveken való fejlesztéshez különböző fejlesztői környezetekre volt szükségük, de a Visual Studio Code rendelkezik többnyelvű támogatással. Ennek köszönhetően könnyen felismeri az eltérő nyelveket, képes ezen nyelvek hibáinak észlelésére is.
+
+Rendelkezik \textbf{Intelli-Sense-el.} Tehát képes felismerni, ha egy kódrészletet hiányosan hagy a fejlesztő, vagy elfelejti deklarálni valamelyik változót. 
+
+A Visual Studio Code-nak platformokon átívelő \textbf{(Cross Platform)} támogatottsága van. Az átlagos fejlesztői környezetek csak egy adott operációs rendszert támogatnak, általában viszont a VS Code a Windows, a Linux és a macOS-t is támogatja. Így bármely operációs rendszerben ugyanúgy használható, és a kódot minden platformon le tudja fordítani. Ha nem lenne benne ez a funkció, akkor kódok különbözően néznének ki minden platformon.
+
+\textbf{Bővítmények és támogatás (Extensions):} Beépített támogatással rendelkezik a JavaScript TypeScript, Node.js, C++, C\#, Java és még sok más nyelv számára, valamint, ha a fejlesztő olyan nyelvet akar használni, amelyet alapból nem támogat, akkor letöltheti azt bővítmény formájában és ezután már a kiválasztott nyelven is képes lesz fejleszteni. A bővítmények nem rontják a fejlesztői környezet teljesítményét, nem lesz tőle lassabb. Emellett a bővítményekkel lehetőség nyílik a Visual Studio Code teljes személyre szabására. Meg lehet változtatni a kinézetét, a gyorsbillentyűk kiosztását, az alapértelmezett beállításokat és még sok más dolgot, ami a fejlesztők javára válik. 
+
+Az általam használt bővítmények:
+
+\begin{itemize}
+    \item Bracket Pair Colorizer 2: Az egybe tartozó zárójeleket azonos színnel jelöli meg az egyszerű átláthatóság miatt.
+    \item Auto Rename tag: A HTML dokumentumokban az első és utolsó tagot egyszerre írja át, így ha módosítani akarom, akkor nincs szükség az első tag módosítása után még megkeresni a második tagot.
+    \item Live Server: Weblap készítése során miután elmentjük, nem szükséges a böngészőben a weblapot lefrissíteni, mivel azt a live server automatikusan elintézi, ezzel a fejlesztő időt tud megspórolni.
+\end{itemize}
+
+A fejlesztés során fontos a kód megfelelő időben történő biztonságos tárolása. Ezt könnyíti meg, hogy beépített Git támogatással rendelkezik, de ha a fejlesztők nem szeretnék ezt használni, akkor a bővítmények segítségével más verzió követő rendszert is alkalmazhat. A Git támogatásnak köszönhetően az adatok lehívhatók a Git Hub repositoryból és mentést is végezhetünk ide. Ezeket a repository-kat le lehet húzni az internetről, ezt a kódot utána lehet módosítani és menteni.
+
+Emellett még rendelkezik beépített támogatással a webes alkalmazások felé is, ami megkönnyíti ezek fejlesztését a Visual Studio Code-ban.
+
+Mivel egy fájlra szükség lehet más projektekhez is, a hierarchikus struktúrában a fájlok mappában helyezkednek el, ennek köszönhetően a fájlokat kedvünk szerint mozgathatjuk, másolhatjuk és törölhetjük.
+
+A Visual Studio Code segítséget nyújt továbbá a kódunk javításához. Amikor egy kódrészletet deklarálunk, amelyet meg lehetne csinálni praktikusabb módszerrel is, akkor felajánlja a módosítás lehetőségét.   
+
+További nagy segítséget nyújt a fejlesztők számára a beépített terminál. Mivel a fejlesztőknek gyakran a könyvtár gyökeréből kell elindulnia egy procedúra elindításához, akkor ez a terminál ott lesz kéznél és így nem kell képernyőt váltania a fejlesztőknek.
+
+Ebben a fejlesztői környezetben egyidejűleg több projektet is meg lehet nyitni és kezelni. Ezek a projektek összekapcsolhatóak, de ez nem szükségszerű.
+
+Ma már alap funkciónak számít a kommentelés, de némely nyelv nem támogatja. Viszont a kommentelés nagy segítséget nyújt a későbbi fejlesztés során, ugyanis segítséget nyújthat a kód megértésében és nyomon követésében. 
